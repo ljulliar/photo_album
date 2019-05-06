@@ -17,7 +17,7 @@ class PicturesController < ApplicationController
       @picture.image.attach(image) if image
       redirect_to pictures_path, notice: 'Photo was successfully uploaded.'
     else
-      flash.now[:alert] = 'Picture was successfully uploaded.'
+      flash.now[:alert] = 'Photo could not be saved.'
       render :new
     end
   end
