@@ -1,0 +1,16 @@
+
+<h4>&nbsp;</h4>
+
+<div id="container">
+<% if @pictures.empty? %>
+  <p>Album is empty. Click on <i class="material-icons">add_a_photo</i> to add a photo.</p>
+<% end %>
+<% for picture in @pictures %>
+  <a class="img_a" href="<%= picture_path(picture) %>">
+    <figure>
+      <%= image_tag(url_for(picture.image), class: 'img_img') %>
+      <figcaption><%= picture.caption || '-' %></figcaption>
+    </figure>
+  </a>
+<% end %>
+</div>

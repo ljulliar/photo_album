@@ -1,0 +1,4 @@
+
+  <% flash.each do |type, message| %>
+      <%= javascript_tag "M.toast({html: '#{message}', classes: 'rounded', displayLength: 4000});" %>
+  <% end %> 

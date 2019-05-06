@@ -1,0 +1,8 @@
+<h4>Photo detail</h4>
+
+<div class="row">
+<%= link_to('Delete', picture_path(@picture), method: :delete,
+            data: { confirm: 'Are you sure?' }, class:"waves-effect waves-light btn-flat") %> 
+</div>
+
+<%= image_tag(url_for(@picture.image), style: "width: 100%") %>

@@ -1,0 +1,19 @@
+test:
+  service: Disk
+  root: <%= Rails.root.join("tmp/storage") %>
+
+local:
+  service: Disk
+  root: <%= Rails.root.join("storage") %>
+
+# Remember not to checkin your GCS keyfile to a repository.
+google:
+  service: GCS
+  project: photo-album-238009
+  credentials: <%= Rails.root.join("config/photo_album_runner.key") %>
+  bucket: photo_album_images
+
+# mirror:
+#   service: Mirror
+#   primary: local
+#   mirrors: [ amazon, google, microsoft ]

@@ -1,0 +1,35 @@
+# 
+# Install the MYSQL driver
+#   gem install mysql2
+#
+# Ensure the MySQL gem is defined in your Gemfile
+#   gem 'mysql2'
+#
+
+default: &default
+  adapter: mysql2
+  encoding: utf8
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  timeout: 900
+
+development:
+  <<: *default
+  database: photo_album_development
+  username: dev_db_user
+  password: xxx
+
+# Warning: The database defined as "test" will be erased and
+# re-generated from your development database when you run "rake".
+# Do not set this db to the same as development or production.
+test:
+  <<: *default
+  database: photo_album_test
+  username: test_db_user
+  password: xxx
+
+production:
+  <<: *default
+  database: photo_album_production
+  username: prod_db_user
+  password: <%= ENV['DATABASE_PASSWORD'] %>
+  socket: "/cloudsql/photo-album-238009:us-central1:photo-album-production"
