@@ -89,17 +89,6 @@ Rails.application.configure do
     config.logger    = ActiveSupport::TaggedLogging.new(logger)
   end
 
-  # Configure Stackdriver parameters
-  
-  # Shared project_id and keyfile
-  config.google_cloud.project_id = "photo-album-238009"
-  config.google_cloud.keyfile = Rails.root.join("config/photo_album_runner.key").to_s
-  
-  # Library specific configurations
-  #config.google_cloud.error_reporting.project_id = "error-reporting-project"
-  config.google_cloud.logging.log_name = "photo-album"
-  #config.google_cloud.trace.capture_stack = true
-
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
 

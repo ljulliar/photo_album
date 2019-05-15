@@ -5,12 +5,10 @@ ruby '2.6.3'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.3'
-# Use MySQL as the database for Active Record
+# Use MySQL as the database for Active Record (also works with Google CloudSQL)
 gem 'mysql2'
 # Use google cloud storage Ruby SDK as ActiveStorage backend
 gem 'google-cloud-storage'
-# Use Google Stackdriver to monitor your application in production
-gem 'stackdriver'
 # Use Materialize for page design (Google Material UI) - Jquery needed
 gem 'jquery-rails'
 gem 'materialize-sass'

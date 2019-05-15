@@ -4,7 +4,7 @@ FROM ruby:2.6
 
 # Install recent versions of nodejs (10.x) and yarn pkg manager
 # Needed to properly pre-compile Rails assets
-RUN (curl -sL https://deb.nodesource.com/setup_10.x | bash -) && apt-get install -y nodejs 
+RUN (curl -sL https://deb.nodesource.com/setup_10.x | bash -) && apt-get update && apt-get install -y nodejs 
 
 RUN (curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add -) && \
     echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list && \
@@ -37,6 +37,9 @@ ENV DATABASE_PASSWORD=${DB_PWD}
 # the Puma HTTP server to serve static content
 # (e.g. CSS and Javascript files)
 ENV RAILS_SERVE_STATIC_FILES=true
+
+# Redirect Rails log to STDOUT for Cloud Run to capture
+ENV RAILS_LOG_TO_STDOUT=true
 
 # Designate the initial sript to run on container startup
 RUN chmod +x /usr/src/app/entrypoint.sh
