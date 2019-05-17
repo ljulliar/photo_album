@@ -27,4 +27,4 @@ steps:
 secrets:
 - kmsKeyName: projects/photo-album-238009/locations/us-central1/keyRings/photo-album/cryptoKeys/db_pwd_key
   secretEnv:
-    DB_PWD: "CiQAG2Y38xZ0dsCoxTsiprGSvEyQQ5tUZhS4Ia26XXZ8V3MkNpYSPQDQH87W5Lay/s7xm2KsYYz/8/pX4J4/9ZZYV5bfoQSuXWtNn68jxVRLwuiNAdi070l3TzmgOXS5VEYdSOI="
+    DB_PWD: "your_encrypted_production_database_password_here"
