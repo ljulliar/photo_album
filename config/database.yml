@@ -32,4 +32,4 @@ production:
   database: photo_album_production
   username: prod_db_user
   password: <%= ENV['DATABASE_PASSWORD'] %>
-  socket: "/cloudsql/photo-album-238009:us-central1:photo-album-production"
+  socket: "/cloudsql/project_id:us-central1:photo-album-production"
