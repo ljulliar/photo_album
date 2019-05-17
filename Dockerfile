@@ -21,6 +21,8 @@ ENV BUNDLE_FROZEN=true
 RUN bundle install
 
 # Copy application code to the container image.
+# Note: files listed in .gitignore are not copied
+# (e.g.secret files)
 COPY . .
 
 # Pre-compile Rails assets (master key needed)
