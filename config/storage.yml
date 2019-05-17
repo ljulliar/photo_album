@@ -13,7 +13,4 @@ google:
   credentials: <%= Rails.root.join("config/photo_album_runner.key") %>
   bucket: photo_album_images_xxxxxx
 
-# mirror:
-#   service: Mirror
-#   primary: local
-#   mirrors: [ amazon, google, microsoft ]
+
