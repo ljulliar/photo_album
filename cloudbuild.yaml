@@ -25,6 +25,6 @@ steps:
   args: ['push', 'gcr.io/$PROJECT_ID/photo_album:latest']
 
 secrets:
-- kmsKeyName: projects/$PROJECT_ID/locations/us-central1/keyRings/photo-album/cryptoKeys/db_pwd_key
+- kmsKeyName: projects/project_id/locations/us-central1/keyRings/photo-album/cryptoKeys/db_pwd_key
   secretEnv:
     DB_PWD: "your_encrypted_production_database_password_here"
